@@ -15,11 +15,13 @@ public class Worker implements Comparable {
         return lastName + " " + id;
     }
 
+    //Method to sort the array workers alphabetically via lastName, and if lastName is same then use id to sort ascending
+
     @Override
     public int compareTo(Object o) {
         if(o instanceof Worker) {
             Worker other = (Worker) o;
-            if(this.lastName.compareTo(other.lastName) != 0) {
+            if(this.lastName.compareTo(other.lastName) != 0) { // != 0 to sort alphabetically, == 0 to sort reverse alphabetically
                 return this.lastName.compareTo(other.lastName);
             }
             if(this.id < other.id) {
